@@ -1,0 +1,1 @@
+#create new Golang Sample with restfull API
