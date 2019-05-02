@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Index Page</title>
+</head>
+<body>
+    <h2>Index Page, List User</h2>
+    <button action="">Add data</button>
+    <table>
+        <thead>
+            <th>No.</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Name</th>
+        </thead>
+        <tbody>
+            {{ range $i, $data := .Userdata}}
+                <td>$i</td>
+                <td>$data['username']</td>
+                <td>$data['email']</td>
+                {{range $j, $names := $data['name']}}
+                    <td>{{ $names }} </td>
+                {{end}}
+            {{end}}
+        </tbody>
+    </table>
+</body>
+</html>
